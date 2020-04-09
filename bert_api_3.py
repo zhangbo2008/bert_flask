@@ -573,6 +573,9 @@ def main(_):
     predict_file = os.path.join(FLAGS.output_dir, "predict.tf_record")
     predict_drop_remainder = True if FLAGS.use_tpu else False
 
+    '''
+    这个借口就是输入2个句子,然后返回他们相似度得分.
+    '''
     @app.route('/pred',methods=['POST','GET'])
     def index():
       response = {}
